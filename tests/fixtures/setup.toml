@@ -1,0 +1,15 @@
+[dotfiles.zsh]
+associations = [
+    { dot_file = "~/.zshrc", config_file = "zsh/.zshrc" },
+]
+commands = [
+    "chsh -s $(which zsh)",
+]
+
+[dotfiles.nvim]
+associations = [
+    { dot_file = "~/.config/nvim", config_file = "nvim" },
+]
+commands = [
+    "nvim --headless -c 'PackerSync' -c 'qa'",
+]
