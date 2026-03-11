@@ -2,15 +2,16 @@
 .DEFAULT_GOAL := install
 
 install:
-	pip install -e ".[dev]"
-	pre-commit install
+	uv python pin 3.12
+	uv sync
+	uv run pre-commit install
 
 test:
-	pytest
+	uv run pytest
 
 lint:
-	black .
-	isort .
+	uv run black .
+	uv run isort .
 
 # Run everything — useful for CI
 ci: lint test
