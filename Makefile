@@ -10,8 +10,8 @@ test:
 	uv run pytest
 
 lint:
+	uv run isort --profile black .
 	uv run black .
-	uv run isort .
 
 # Run everything — useful for CI
 ci: lint test
